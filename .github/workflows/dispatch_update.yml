@@ -10,7 +10,7 @@ jobs:
       - name: Repository Dispatch
         uses: peter-evans/repository-dispatch@v3
         with:
-          token: ${{ secrets.PAT }}
+          token: ${{ secrets.DISPATCH_REPO }}
           repository: z872845991/temp
           event-type: repo_b_updated
           client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
