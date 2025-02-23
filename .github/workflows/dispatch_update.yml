@@ -1,0 +1,16 @@
+name: Dispatch Update
+
+on:
+  push:
+    branches: [main] # 或者其他你想要监听的分支
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch event
+        uses: peter-murray/repository-dispatch@v2
+        with:
+          repository: 'z872845991/temp'
+          event-type: repo_b_updated
+          client-payload: '{"ref": "${{ github.ref }}"}'
